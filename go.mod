@@ -7,6 +7,7 @@ require (
 	github.com/krakendio/binder v0.0.0-20230413105421-1bbe94e65f45
 	github.com/luraproject/lura/v2 v2.0.5
 	github.com/yuin/gopher-lua v0.0.0-20190206043414-8bfc7677f583
+	lukechampine.com/blake3 v1.2.1
 )
 
 require (
@@ -20,6 +21,7 @@ require (
 	github.com/go-playground/validator/v10 v10.9.0 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
+	github.com/klauspost/cpuid/v2 v2.0.9 // indirect
 	github.com/krakendio/flatmap v1.1.1 // indirect
 	github.com/leodido/go-urn v1.2.1 // indirect
 	github.com/mattn/go-colorable v0.0.9 // indirect

@@ -2,7 +2,7 @@ package lua
 
 import (
 	"bytes"
-	"crypto/md5"
+	"lukechampine.com/blake3"
 	"encoding/hex"
 	"errors"
 	"io"
@@ -80,7 +80,7 @@ func Parse(l logging.Logger, e config.ExtraConfig, namespace string) (Config, er
 	}
 	res.SourceLoader = onceLoader(loader)
 
-	checksums, ok := c["md5"].(map[string]interface{})
+	checksums, ok := c["blake3"].(map[string]interface{})
 	if !ok {
 		return res, nil
 	}
@@ -91,11 +91,12 @@ func Parse(l logging.Logger, e config.ExtraConfig, namespace string) (Config, er
 			return res, ErrWrongChecksumType(source)
 		}
 		content, _ := res.SourceLoader.Get(source)
-		hash := md5.New()
+		hash := blake3.New(64, nil)
+
 		if _, err := io.Copy(hash, bytes.NewBuffer([]byte(content))); err != nil {
 			return res, err
 		}
-		hashInBytes := hash.Sum(nil)[:16]
+		hashInBytes := hash.Sum(nil)[:32]
 		if actual := hex.EncodeToString(hashInBytes); checksum != actual {
 			return res, ErrWrongChecksum{
 				Source:   source,

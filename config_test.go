@@ -17,8 +17,8 @@ func TestParse(t *testing.T) {
 			"sources": []interface{}{
 				source,
 			},
-			"md5": map[string]interface{}{
-				source: "49ae50f58e35f4821ad4550e1a4d1de0",
+			"blake3": map[string]interface{}{
+				source: "28b4c96e19187bef5f4f90f377793e3ed465868d1f51030ff375a7f41c91e387",
 			},
 			"pre":       "pre",
 			"post":      "post",
