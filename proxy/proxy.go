@@ -5,7 +5,7 @@ import (
 	"errors"
 
 	"github.com/krakendio/binder"
-	lua "github.com/krakendio/krakend-lua/v2"
+	lua "github.com/yonasBSD/krakend-lua/v2"
 	"github.com/luraproject/lura/v2/config"
 	"github.com/luraproject/lura/v2/logging"
 	"github.com/luraproject/lura/v2/proxy"

@@ -9,8 +9,8 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/krakendio/binder"
-	lua "github.com/krakendio/krakend-lua/v2"
-	"github.com/krakendio/krakend-lua/v2/router"
+	lua "github.com/yonasBSD/krakend-lua/v2"
+	"github.com/yonasBSD/krakend-lua/v2/router"
 	"github.com/luraproject/lura/v2/config"
 	"github.com/luraproject/lura/v2/logging"
 	"github.com/luraproject/lura/v2/proxy"
