@@ -58,7 +58,7 @@ func TestParse_live(t *testing.T) {
 	initialContent := `print("hello, lua")`
 	finalContent := `print("bye, lua")`
 
-	if _, err := tmpfile.Write([]byte(initialContent)); err != nil {
+	if _, err := tmpfile.WriteString(initialContent); err != nil {
 		t.Error(err)
 		return
 	}
